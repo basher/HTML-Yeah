@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML. Yeah!</title>
+
+    <style>
+        html {
+            margin: 1rem;
+        }
+
+        i.accessibility {
+            background-color: tomato;
+            display: inline-block;
+            font-family: sans-serif;
+            margin: .2rem 0;
+            padding: .5rem;
+        }
+
+        .button-wrapper {
+            background-color: rgba(0,0,0,.05);
+            position: fixed;
+            top: 1rem;
+            width: calc(100% - 2rem);
+        }
+
+        .button-wrapper > div {
+            display: flex;
+            flex-direction: row-reverse;
+        }
+
+        [role="switch"] {
+            font-size: 1.5rem;
+            padding: .5rem;
+        }
+
+        .demo {
+            padding: 1rem 3rem;
+        }
+
+        .hide-me {
+            display: none;
+        }
+    </style>
+
+    <link id="this-css" rel="stylesheet" href="index.css" />
+</head>
+<body>
+
+    <div class="button-wrapper">
+        <div>
+            <button role="switch" aria-checked="false">
+                disable CSS
+            </button>
+        </div>
+    </div>
+
+    <h1 class="highlight">HTML. Yeah!</h1>
+    <p class="tldr">Why the f<span class="accessibility">uck</span><span class="hide-me">***</span> should I bother writing semantic HTML anyway?</p>
+    <p class="highlight">Disable CSS with the button above, and see what is actually rendered in the browser.
+        <br/>This is how assistive technologies (screen readers) <em>see</em> the page.
+    </p>
+
+
+    <!-- Demo -->
+    <h2 class="highlight">
+        <span class="counter">1.</span>
+        To button or not to button?
+    </h2>
+
+    <div class="demo">
+
+        <span class="btn">What am I?</span>
+        <br/>
+        <i class="accessibility">I'm a <code>span</code>. I am completely useless without CSS and JavaScript! I'm not even keyboard focusable.</i>
+        <br class="accessibility"/>
+        <br/>
+
+        <a class="btn" href="#">What am I?</a>
+        <br/>
+        <i class="accessibility">I'm a <code>link</code>. I should go somewhere.</i>
+        <br class="accessibility"/>
+        <br/>
+
+        <button class="btn">What am I?</button>
+        <br/>
+        <i class="accessibility">I'm a <code>button</code>. I perform an action.</i>
+
+    </div>
+
+
+    <!-- Demo -->
+    <h2 class="highlight">2. You're a star</h2>
+
+    <p class="highlight">Which is better?
+        <br/>This&hellip;
+        <br/>
+        <i class="accessibility">A <code>definition list</code> with real text indicating star rating.</i>
+        <br class="accessibility"/>
+    </p>
+
+    <div class="demo">
+
+        <dl class="rating">
+            <dt class="accessibility">Rating</dt>
+            <dd>
+                <i>
+                    <svg width="17" height="16" viewBox="0 0 17 16" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10.889 5.575L8.5 0 6.112 5.583 0 6.097l4.641 3.983L3.247 16 8.5 12.859 13.753 16l-1.386-5.92L17 6.097z" fill-rule="evenodd"></path>
+                    </svg>
+                </i>
+                <i>
+                    <svg width="17" height="16" viewBox="0 0 17 16" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M17 6.097l-6.111-.522L8.5 0 6.112 5.583 0 6.097l4.641 3.983L3.247 16 8.5 12.859 13.753 16l-1.386-5.92L17 6.097zm-5.304 7.015l-.85-3.605 2.822-2.425-3.723-.32L8.5 3.368V11.2l3.196 1.912z" fill-rule="evenodd"></path>
+                    </svg>
+                </i>
+                <span class="accessibility">
+                    1.5 out of 5 stars
+                </span>
+                (<span>99</span><span class="accessibility">&nbsp;total reviews</span>)
+            </dd>
+        </dl>
+
+    </div>
+
+    <p class="highlight">Or this&hellip;
+        <br/>
+        <i class="accessibility">No meaningful text at all.</i>
+        <br class="accessibility"/>
+    </p>
+
+    <div class="demo">
+
+        <div class="rating">
+            <div>
+                <i>
+                    <svg width="17" height="16" viewBox="0 0 17 16" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10.889 5.575L8.5 0 6.112 5.583 0 6.097l4.641 3.983L3.247 16 8.5 12.859 13.753 16l-1.386-5.92L17 6.097z" fill-rule="evenodd"></path>
+                    </svg>
+                </i>
+            </div>
+            <div>
+                <i>
+                    <svg width="17" height="16" viewBox="0 0 17 16" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M17 6.097l-6.111-.522L8.5 0 6.112 5.583 0 6.097l4.641 3.983L3.247 16 8.5 12.859 13.753 16l-1.386-5.92L17 6.097zm-5.304 7.015l-.85-3.605 2.822-2.425-3.723-.32L8.5 3.368V11.2l3.196 1.912z" fill-rule="evenodd"></path>
+                    </svg>
+                </i>
+            </div>
+            <span class="">(99)</span>
+        </div>
+
+    </div>
+
+
+    <!-- Demo -->
+    <h2 class="highlight">
+        <span class="counter">3.</span>
+        Tables are wrong, right?
+    </h2>
+
+    <p class="highlight">Which is better?
+        <br/>This&hellip;
+        <br/>
+        <i class="accessibility">A properly marked up table, with <code>ID</code> &amp; <code>HEADER</code> attributes associating each cell with its headers.</i>
+        <br class="accessibility"/>
+    </p>
+
+    <div class="demo">
+
+        <table class="basket-table" border="1">
+            <caption class="accessibility">Product(s) added to basket</caption>
+
+            <thead>
+                <tr>
+                    <th id="hd" class="basket-header">
+                        Home Delivery items (3)</span>
+                    </th>
+                    <th id="hd-qty" class="basket-header qty">
+                        Q<span class="accessibility">uanti</span>ty
+                    </th>
+                    <th id="hd-price" class="basket-header price">Price</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <th headers="hd" id="hd1" colspan="3" class="basket-sub-header">
+                        <span class="basket-fulfilment">Delivered by [some company] on [date]</span>
+                    </th>
+                </tr>
+
+                <tr>
+                    <td headers="hd hd1" class="basket-product">
+                        [Product 1] lorem ipsum etc&hellip;
+                    </td>
+                    <td headers="hd-qty" class="basket-product qty">
+                        10
+                    </td>
+                    <td headers="hd-price" class="basket-product price">
+                        &pound;100
+                    </td>
+                </tr>
+
+                <tr>
+                    <td headers="hd hd1" class="basket-product">
+                        [Product 2] lorem ipsum etc&hellip;
+                    </td>
+                    <td headers="hd-qty" class="basket-product qty">
+                        1
+                    </td>
+                    <td headers="hd-price" class="basket-product price">
+                        &pound;10
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <th headers="hd" id="hd2" colspan="3" class="basket-sub-header">
+                        <span class="basket-fulfilment">Delivered by [another company] on [date]</span>
+                    </th>
+                </tr>
+
+                <tr>
+                    <td headers="hd hd2" class="basket-product">
+                        [Product 3] lorem ipsum etc&hellip;
+                    </td>
+                    <td headers="hd-qty" class="basket-product qty">
+                        1
+                    </td>
+                    <td headers="hd-price" class="basket-product price">
+                        &pound;10
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+
+    </div>
+
+    <p class="highlight">Or this&hellip;
+        <br/>
+        <i class="accessibility">Could be improved a little by being a <code>definition list</code>.</i>
+        <br class="accessibility"/>
+    </p>
+
+    <div class="demo">
+
+        <h2 class="basket-header">Home Delivery items (3)</h2>
+        <div>
+            <p class="basket-sub-header">Delivered by [some company] on [date]</p>
+        </div>
+        <div class="basket-product">
+            <p>10 x [Product 1] lorem ipsum etc&hellip;</p>
+            <p>&pound;100</p>
+        </div>
+        <div class="basket-product">
+            <p>1 x [Product 2] lorem ipsum etc&hellip;</p>
+            <p>&pound;10</p>
+        </div>
+        <div>
+            <p class="basket-sub-header">Delivered by [another company] on [date]</p>
+        </div>
+        <div class="basket-product">
+            <p>1 x [Product 3] lorem ipsum etc&hellip;</p>
+            <p>&pound;10</p>
+        </div>
+
+    </div>
+
+    <script>
+        var toggle = document.querySelector('[role="switch"]'),
+            css = document.getElementById('this-css').sheet,
+            $this,
+            pressed;
+
+        toggle.addEventListener('click', function(e) {
+            $this = e.target;
+            pressed = $this.getAttribute('aria-checked') === 'true';
+            $this.setAttribute('aria-checked', !pressed);
+
+            if (!pressed) {
+                $this.textContent = 'enable CSS';
+                css.disabled = true;
+            } else {
+                $this.textContent = 'disable CSS';
+                css.disabled = false;
+            }
+        });
+    </script>
+
+</body>
+</html>

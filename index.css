@@ -1,0 +1,137 @@
+:root {
+    --color-brand: tomato;
+    --color-highlight: darkolivegreen;
+    --color-dark: #333;
+    --color-light: #f0f0f0;
+    --color-grey: #ccc;
+    --font-family: sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* Reset + page styles */
+.accessibility {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+.hide-me {
+    display: inline-block;
+}
+
+body {
+    font: 1rem/1.25 var(--font-family);
+    margin: 0;
+}
+
+.tldr {
+    background-color: var(--color-highlight);
+    color: var(--color-light);
+    display: inline-block;
+    font-size: 1.5rem;
+    font-style: italic;
+    font-variant: small-caps;
+    margin-bottom: 0;
+    padding: .5rem;
+}
+
+.highlight {
+    border-bottom: 3px solid var(--color-highlight);
+    color: var(--color-highlight);
+}
+
+h1.highlight {
+    font-size: 3rem;
+    margin-top: 4rem;
+}
+
+h2.highlight {
+    margin-top: 3rem;
+}
+
+p.highlight {
+    border: 0;
+    font-size: 1.25rem;
+}
+
+/* Demo - buttons */
+.btn {
+    background-color: var(--color-brand);
+    border: 3px solid var(--color-dark);
+    color: var(--color-light);
+    display: inline-block;
+    font-family: var(--font-family);
+    font-size: 1rem;
+    padding: .5rem;
+    text-align-last: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    vertical-align: middle;
+}
+
+.btn:hover,
+.btn:focus {
+    background-color: var(--color-grey);
+    color: var(--color-dark);
+    cursor: pointer;
+}
+
+/* Demo - star ratings */
+dl,
+dd {
+    margin: 0;
+}
+
+.rating > div {
+    display: inline-block;
+}
+
+/* Demo - product basket */
+th,
+td {
+    border: 0;
+    text-align: left;
+}
+
+.basket-table {
+    border: 0;
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+}
+
+.basket-header {
+    background-color: var(--color-dark);
+    color: var(--color-light);
+    font-size: 1rem;
+    font-weight: bold;
+    margin: 0;
+    padding: 1rem;
+}
+
+.basket-sub-header {
+    font-weight: bold;
+}
+
+.basket-sub-header,
+.basket-product {
+    border-bottom: 1px solid var(--color-grey);
+    margin: 0;
+    padding: 1rem;
+}
+
+.basket-product p {
+    margin-top: 0;
+}
+
+.basket-product p:last-of-type {
+    margin-bottom: 0;
+}
